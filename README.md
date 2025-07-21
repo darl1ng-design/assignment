@@ -1,5 +1,3 @@
-# assignment
-
 # Assignment
 
 ## Opis
