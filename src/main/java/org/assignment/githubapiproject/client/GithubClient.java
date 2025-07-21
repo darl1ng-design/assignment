@@ -26,8 +26,12 @@ public class GithubClient {
                 .path("/users/{usr}/repos")
                 .buildAndExpand(usr)
                 .toUriString();
+        try {
             Repo[] repositories = rt.getForObject(url, Repo[].class);
             return repositories != null ? List.of(repositories) : List.of();
+        }catch(HttpClientErrorException.NotFound e) {
+            throw new UserNotFoundException("User not found");
+        }
     }
 
     public List<Branch> fetchBranches(String usr, String repo){
