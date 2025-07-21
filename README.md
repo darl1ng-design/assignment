@@ -19,7 +19,7 @@ cd assignment
 
 ./mvnw spring-boot:run
 
-** Alternatywnie można użyć IntelliJ lub innego IDE i uruchomić klasę GithubApiProjectApplication.java
+ Alternatywnie można użyć IntelliJ lub innego IDE i uruchomić klasę GithubApiProjectApplication.java
 
 3. Wykorzystaj endpoint
 
@@ -33,6 +33,7 @@ GET http://localhost:8080/api/github/repos/{nazwa_użytkownika}
 
  
 ## Przykładowa odpowiedź 
+```
 [
   {
     "repositoryName": "example",
@@ -42,23 +43,23 @@ GET http://localhost:8080/api/github/repos/{nazwa_użytkownika}
     "fork": false,
     "branches": [
       {
-        "branchName": "main",
-        "commit": {
+        "branchName""commit": {
           "sha": "f1e2d3..."
         }
       }
     ]
   }
 ]
+```
 
 ## Obsługa błędów
-** W przypadku nieistniejącego użytkownika: 
-
+ W przypadku nieistniejącego użytkownika: 
+```
 {
     “status”: 404,
     “message”: "User not found"
 }
-
+```
 
 
 
